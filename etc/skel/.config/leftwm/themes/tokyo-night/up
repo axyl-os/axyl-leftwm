@@ -26,6 +26,12 @@ fi
 # change nvim theme
 sed -i "s/theme =.*$/theme = \"tokyonight\",/g" $HOME/.config/nvim/lua/chadrc.lua
 
+# Set Super key
+if [ -x "$(command -v ksuperkey)" ]; then
+  ksuperkey -e 'Super_L=Alt_L|F1' &> /dev/null &
+  ksuperkey -e 'Super_R=Alt_L|F1' &> /dev/null &
+fi
+
 # Launch SXHKD daemon
 if [ -x "$(command -v sxhkd)" ]; then
   sxhkd &> /dev/null &
