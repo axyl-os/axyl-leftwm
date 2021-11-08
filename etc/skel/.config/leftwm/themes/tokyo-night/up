@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source colors
+
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 # Down the last running theme
@@ -36,6 +38,24 @@ fi
 if [ -x "$(command -v sxhkd)" ]; then
   sxhkd &> /dev/null &
 fi
+
+# power manager & polkit
+xfce4-power-manager &
+if [[ ! `pidof xfce-polkit` ]]; then
+    /usr/lib/xfce-polkit/xfce-polkit &
+fi
+
+# Launch notification daemon
+if [ -x "$(command -v sxhkd)" ]; then
+  dunst \
+  -geom "280x50-10+38" -frame_width "1" -font "Source Code Pro Medium 10" \
+  -lb "${bg}FF" -lf "${fg}FF" -lfr "${altbg}FF" \
+  -nb "${bg}FF" -nf "${fg}FF" -nfr "${altbg}FF" \
+  -cb "${bg}FF" -cf "#82dbf4FF" -cfr "#BF616AFF" &
+fi
+
+# Start udiskie
+udiskie &
 
 index=0
 monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
