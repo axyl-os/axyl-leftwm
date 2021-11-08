@@ -14,7 +14,7 @@ key = "r"
 
 [[keybind]]
 command = "Execute"
-value = "pkill leftwm"
+value = "pkill -KILL -u $USER"
 modifier = ["Control", "Shift"]
 key = "q"
 
@@ -26,12 +26,12 @@ key = "w"
 [[keybind]]
 command = "MoveWindowUp"
 modifier = ["modkey", "Shift"]
-key = "Up"
+key = "Right"
 
 [[keybind]]
 command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
-key = "Down"
+key = "Left"
 
 [[keybind]]
 command = "FocusWindowUp"
@@ -46,12 +46,12 @@ key = "Left"
 [[keybind]]
 command = "NextLayout"
 modifier = ["modkey", "Control"]
-key = "Up"
+key = "comma"
 
 [[keybind]]
 command = "PreviousLayout"
 modifier = ["modkey", "Control"]
-key = "Down"
+key = "period"
 
 [[keybind]]
 command = "GotoTag"
