@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-source colors
-
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 # Down the last running theme
@@ -47,12 +45,8 @@ if [[ ! `pidof xfce-polkit` ]]; then
 fi
 
 # Launch notification daemon
-if [ -x "$(command -v sxhkd)" ]; then
-  dunst \
-  -geom "280x50-10+38" -frame_width "1" -font "Source Code Pro Medium 10" \
-  -lb "${bg}FF" -lf "${fg}FF" -lfr "${altbg}FF" \
-  -nb "${bg}FF" -nf "${fg}FF" -nfr "${altbg}FF" \
-  -cb "${bg}FF" -cf "#82dbf4FF" -cfr "#BF616AFF" &
+if [ -x "$(command -v dunst)" ]; then
+  dunst -config $SCRIPTPATH/dunstrc &
 fi
 
 # Start udiskie
