@@ -27,6 +27,10 @@ fi
 # change nvim theme
 sed -i "s/theme =.*$/theme = \"tomorrow-night\",/g" $HOME/.config/nvim/lua/chadrc.lua
 
+# change xfce4-terminal colorscheme
+XFCE_TERM_PATH="$HOME/.config/xfce4/terminal"
+cp "$XFCE_TERM_PATH"/colorschemes/tomorrow-night "$XFCE_TERM_PATH"/terminalrc
+
 # Set Super key
 if [ -x "$(command -v ksuperkey)" ]; then
   ksuperkey -e 'Super_L=Alt_L|F1' &> /dev/null &
