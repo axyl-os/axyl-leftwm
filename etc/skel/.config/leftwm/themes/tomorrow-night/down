@@ -9,4 +9,4 @@ fi
 
 echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
-killall -9 ksuperkey picom polybar sxhkd dunst xfce4-power-manager
+killall -9 ksuperkey picom polybar sxhkd dunst xfce4-power-manager eww

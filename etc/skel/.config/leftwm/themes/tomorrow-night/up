@@ -27,6 +27,10 @@ fi
 # change nvim theme
 sed -i "s/theme =.*$/theme = \"tomorrow-night\",/g" $HOME/.config/nvim/lua/chadrc.lua
 
+# Launch Conkeww
+sed -i "s/colors\/color-.*/colors\/color-tomorrow-night.yuck\")/g" $HOME/.config/conkeww/eww.yuck
+eww --config $HOME/.config/conkeww/ open conkeww-main
+
 # change xfce4-terminal colorscheme
 XFCE_TERM_PATH="$HOME/.config/xfce4/terminal"
 cp "$XFCE_TERM_PATH"/colorschemes/tomorrow-night "$XFCE_TERM_PATH"/terminalrc
