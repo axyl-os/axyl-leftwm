@@ -25,7 +25,7 @@ if [ -x "$(command -v feh)" ]; then
 fi
 
 # change nvim theme
-sed -i "s/theme =.*$/theme = \"tomorrow-night\",/g" $HOME/.config/nvim/lua/chadrc.lua
+sed -i "s/theme =.*$/theme = \"tomorrow-night\",/g" $HOME/.config/nvim/lua/custom/chadrc.lua
 
 # Launch Conkeww
 sed -i "s/colors\/color-.*/colors\/color-tomorrow-night.yuck\")/g" $HOME/.config/conkeww/eww.yuck
@@ -56,9 +56,6 @@ fi
 if [ -x "$(command -v dunst)" ]; then
   dunst -config $SCRIPTPATH/dunstrc &
 fi
-
-# Start udiskie
-udiskie &
 
 index=0
 monitor="$(polybar -m | grep +0+0 | sed s/:.*// | tac)"
