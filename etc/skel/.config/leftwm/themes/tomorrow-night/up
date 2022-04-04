@@ -35,6 +35,10 @@ eww --config $HOME/.config/conkeww/ open conkeww-main
 XFCE_TERM_PATH="$HOME/.config/xfce4/terminal"
 cp "$XFCE_TERM_PATH"/colorschemes/tomorrow-night "$XFCE_TERM_PATH"/terminalrc
 
+# change cava colorscheme
+CAVA_PATH="$HOME/.config/cava"
+cp "$CAVA_PATH"/colorschemes/tomorrow-night "$CAVA_PATH"/config
+
 # Set Super key
 if [ -x "$(command -v ksuperkey)" ]; then
   ksuperkey -e 'Super_L=Alt_L|F1' &> /dev/null &
