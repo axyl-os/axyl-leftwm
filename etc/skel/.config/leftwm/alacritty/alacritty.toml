@@ -13,9 +13,6 @@ TERM = "alacritty"
 
 [window]
 decorations = "full"
-opacity = 1.0
-dynamic_title = true
-startup_mode = "Windowed"
 
 [scrolling]
 history = 10000
